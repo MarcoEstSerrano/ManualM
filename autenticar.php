@@ -10,6 +10,7 @@ if (isset($_POST['email'])) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$email]);
     $usuario = $stmt->fetch();
+    
 
     if ($usuario) {
         // 2. ¡Éxito! Guardamos el ID numérico (el 1) en la sesión
