@@ -126,6 +126,13 @@
             <img src="icono_google.png" alt="G" style="width: 20px;">
             Acceder como los grandes
         </button>
+        <div class="separator">¿NUEVO EN EL OLIMPO?</div>
+        <p style="font-size: 0.8em;">
+            <a href="registro.php" style="color: #00d4ff; text-decoration: none; font-weight: bold;">
+                CREAR CUENTA DE GUERRERO
+            </a>
+        </p>
+        
     </div>
 
     <script type="module">
