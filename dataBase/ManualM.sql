@@ -34,3 +34,5 @@ INSERT INTO categorias (nombre) VALUES ('HTML');
 INSERT INTO categorias (nombre) VALUES ('CSS');
 
 SELECT * FROM usuarios;
+
+INSERT INTO usuarios (nombre, email, password) VALUES ('Marco', 'marcoesteban777@gmail.com', 'marcos12');
