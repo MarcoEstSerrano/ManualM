@@ -28,7 +28,7 @@ $temas = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', sans-serif;
-            background-image: url('olimpo_medio_agua.png'); 
+            background-image: url('image/olimpo_medio_agua.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;

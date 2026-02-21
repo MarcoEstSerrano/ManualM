@@ -4,7 +4,8 @@ require('conexion/conexion.php');
 if (isset($_POST['email'])) {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
-    // No guardamos la contraseña aquí porque ya vive segura en Firebase
+    // No guardamos la contraseña aquí porque ya vive segura en Firebase, entonces en lugar de guardar la contraseña en la base de datos
+    // guarda un uid que es como un hash que se produce automaticamente con firebase.
     $uid = $_POST['uid']; 
 
     $sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";

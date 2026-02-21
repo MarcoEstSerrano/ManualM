@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Reutilizamos el fondo del Olimpo para consistencia */
         .bg-editar {
-            background-image: url('caballo_astral.png'); 
+            background-image: url('image/caballo_astral.png'); 
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;

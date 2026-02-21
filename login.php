@@ -15,7 +15,7 @@
     }
 
     .bg-image {
-        background-image: url('poseidón_kratos.png');
+        background-image: url('image/poseidón_kratos.png');
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;

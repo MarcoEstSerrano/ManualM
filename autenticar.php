@@ -6,7 +6,9 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
 
     // 1. Buscamos al guerrero por su email de Google en nuestra tabla local
-    $sql = "SELECT id FROM usuarios WHERE email = ?";
+    // eso si pido no solo el id sino tambien el nombre para que no salga bienvenido y un correo casi entero como nombre
+    // sino que salga bienvenido y el nombre nada mas que agrega cuando se registra.
+    $sql = "SELECT id, nombre FROM usuarios WHERE email = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$email]);
     $usuario = $stmt->fetch();

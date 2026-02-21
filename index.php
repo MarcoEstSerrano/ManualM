@@ -5,6 +5,7 @@ session_start();
 
 //prueba
 
+//esta parte evita que nadie entre a ver el interior de la página sin estar registrado.
 header("Cache-Control: no-cache, no-store, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
@@ -32,7 +33,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
     /* Fondo del Olimpo */
     .bg-olympus {
-        background-image: url('olympus_tholos.png'); 
+        background-image: url('image/olympus_tholos.png'); 
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

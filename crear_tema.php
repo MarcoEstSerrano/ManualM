@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Fondo del templo en el agua */
         .bg-crear {
-            background-image: url('olimpo_medio_agua.png'); 
+            background-image: url('image/olimpo_medio_agua.png'); 
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
