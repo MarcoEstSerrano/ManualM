@@ -22,45 +22,47 @@
         <p><a href="login.php" style="color: #00d4ff; text-decoration: none; font-size: 0.8em;">YA SOY DIGNO (VOLVER)</a></p>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+   <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+            import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-        // USA TU MISMA CONFIGURACIÓN DE LOGIN.PHP
-        const firebaseConfig = {
-            apiKey: "AIzaSyAi43VTq6fiZMrb4__74V0Wpn7we--bIVc",
-            authDomain: "manualm.firebaseapp.com",
-            projectId: "manualm",
-            storageBucket: "manualm.firebasestorage.app",
-            messagingSenderId: "853752315860",
-            appId: "1:853752315860:web:ab1c18a66c12517c022041"
-        };
+            const firebaseConfig = {
+              apiKey: "AIzaSyAi43VTq6fiZMrb4__74V0Wpn7we--bIVc",
+              authDomain: "manualm.firebaseapp.com",
+              projectId: "manualm",
+              storageBucket: "manualm.firebasestorage.app",
+              messagingSenderId: "853752315860",
+              appId: "1:853752315860:web:ab1c18a66c12517c022041"
+            };
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
 
-        document.getElementById('btnRegistrar').addEventListener('click', () => {
-            const email = document.getElementById('email').value;
-            const pass = document.getElementById('password').value;
-            const nombre = document.getElementById('nombre').value;
+            document.getElementById('btnRegistrar').addEventListener('click', (e) => {
+              e.preventDefault(); // Evita que el formulario se envíe por PHP tradicional
+              const email = document.getElementById('email').value;
+              const pass = document.getElementById('password').value;
+              const nombre = document.getElementById('nombre').value;
 
-            // 1. Crear usuario en Firebase
-            createUserWithEmailAndPassword(auth, email, pass)
+              // 1. Crear el usuario en Firebase
+              createUserWithEmailAndPassword(auth, email, pass)
+                // Dentro del .then de tu registro en Firebase
                 .then((userCredential) => {
-                    // 2. Si Firebase acepta, enviamos a MySQL vía PHP
+                    const user = userCredential.user;
                     const formData = new FormData();
-                    formData.append('nombre', nombre);
-                    formData.append('email', email);
-                    formData.append('uid', userCredential.user.uid);
+                    formData.append('nombre', document.getElementById('nombre').value);
+                    formData.append('email', user.email);
+                    formData.append('uid', user.uid); // Usamos el UID de Firebase como referencia
 
-                    fetch('procesar_registro.php', { method: 'POST', body: formData })
-                        .then(() => {
-                            alert("¡Has sido aceptado en el Olimpo!");
-                            window.location.href = 'login.php';
-                        });
+                    return fetch('procesar_registro.php', { method: 'POST', body: formData });
                 })
-                .catch((error) => alert("Error del Olimpo: " + error.message));
-        });
-    </script>
+                .then(() => {
+                    alert("¡Registro completo en el Olimpo y en la PC!");
+                    window.location.href = 'login.php';
+                });
+                })
+                .catch((error) => alert("El Olimpo te rechazó: " + error.message));
+            });
+</script>
 </body>
 </html>

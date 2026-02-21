@@ -32,3 +32,5 @@ CREATE TABLE temas (
 INSERT INTO categorias (nombre) VALUES ('PHP');
 INSERT INTO categorias (nombre) VALUES ('HTML');
 INSERT INTO categorias (nombre) VALUES ('CSS');
+
+SELECT * FROM usuarios;

@@ -115,7 +115,7 @@
         <h2>Bienvenido Mortal</h2>
         <span class="quote">"Demuestra que eres digno"</span>
         
-        <input type="email" id="email" placeholder="Correo de Guerrero" value="marcoesteban777@gmail.com">
+        <input type="email" id="email" placeholder="Correo de Guerrero" value="">
         <input type="password" id="pass" placeholder="Contraseña">
         
         <button id="btnLogin">Validar tu destino</button>
