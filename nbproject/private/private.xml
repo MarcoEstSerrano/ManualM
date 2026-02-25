@@ -5,14 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/ManualM/index.php</file>
             <file>file:/C:/xampp/htdocs/ManualM/autenticar.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/registro.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/login.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/ver_temas.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/caballo_astral.png</file>
-            <file>file:/C:/xampp/htdocs/ManualM/crear_tema.php</file>
             <file>file:/C:/xampp/htdocs/ManualM/editar_tema.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/logout.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/procesar_registro.php</file>
         </group>
     </open-files>
 </project-private>
