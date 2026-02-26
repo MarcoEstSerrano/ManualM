@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
             .bg-olympus {
-                background-image: url('image/olympus_tholos.png');
+                background-image: url('https://images6.alphacoders.com/795/795828.jpg');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -59,7 +59,7 @@ if (!isset($_SESSION['usuario_id'])) {
             <main class="flex-1 p-8">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-10">
-                        <h1 class="text-4xl font-black mb-2">BASE DEL <span class="text-[#f1c40f]">OLIMPO</span></h1>
+                        <h1 class="text-4xl font-black mb-2">CENTRO DE <span class="text-[#f1c40f]">CONTROL</span></h1>
                         <p class="text-gray-300">Selecciona una herramienta para comenzar</p>
                     </div>
 

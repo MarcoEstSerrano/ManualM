@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Reutilizamos el fondo del Olimpo para consistencia */
         .bg-editar {
-            background-image: url('image/caballo_astral.png'); 
+            background-image: url('https://wallpapers.com/images/hd/writing-with-maroon-quill-qqpw204dld913g68.jpg'); 
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
