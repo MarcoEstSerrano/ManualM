@@ -29,7 +29,7 @@ $tareas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body class="bg-olympus min-h-screen text-white p-4">
     <div class="max-w-4xl mx-auto">
         <div class="flex justify-between items-center mb-8 glass p-6 rounded-2xl">
-            <h1 class="text-3xl font-black text-[#f1c40f]">PENDIENTES <span class="text-white">DEL OLIMPO</span></h1>
+            <h1 class="text-3xl font-black text-[#f1c40f]">PENDIENTES <span class="text-white"></span></h1>
             <a href="index.php" class="bg-gray-700 px-4 py-2 rounded-full">Volver</a>
         </div>
 

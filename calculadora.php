@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculadora del Oráculo | Manual M</title>
+        <title>Calculadora | Manual M</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
             .bg-olympus {
@@ -75,7 +75,7 @@
             </div>
 
             <a href="index.php" class="block text-center mt-6 text-gray-400 hover:text-[#f1c40f] text-sm uppercase tracking-widest">
-                ← Volver al Olimpo
+                ← Volver
             </a>
         </div>
 

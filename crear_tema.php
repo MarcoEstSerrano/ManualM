@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Consagrar Tema</button>
         </form>
 
-        <a href="index.php" class="link-volver">⬅ Volver al Olimpo</a>
+        <a href="index.php" class="link-volver">⬅ Volver</a>
     </div>
 </div>
 

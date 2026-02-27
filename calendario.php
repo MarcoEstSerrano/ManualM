@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario de las Eras | Manual M</title>
+    <title>Calendario | Manual M</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
     
@@ -32,8 +32,8 @@
 
     <div class="max-w-5xl mx-auto glass-container rounded-3xl p-6 shadow-2xl">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-black text-[#f1c40f] tracking-tighter">CALENDARIO <span class="text-white">DEL SABER</span></h1>
-            <a href="index.php" class="text-sm text-gray-400 hover:text-[#f1c40f] transition">← VOLVER AL OLIMPO</a>
+            <h1 class="text-2xl font-black text-[#f1c40f] tracking-tighter">Herramienta de <span class="text-white">Calendario</span></h1>
+            <a href="index.php" class="text-sm text-gray-400 hover:text-[#f1c40f] transition">← VOLVER</a>
         </div>
 
         <div id="calendar" class="min-h-[600px]"></div>

@@ -34,7 +34,7 @@ try {
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Tesorería del Olimpo | Manual M</title>
+        <title>Tesorería | Manual M</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
             .bg-olympus {

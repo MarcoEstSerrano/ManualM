@@ -4,24 +4,6 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ManualM/index.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/autenticar.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/editar_tema.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/calculadora.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/calendario.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/finanzas.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/procesar_finanzas.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/conexion/conexion.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/eliminar_movimiento.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/tareas.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/procesar_tareas.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/apuntes.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/procesar_apuntes.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/multimedia.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/procesar_multimedia.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/musica.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/subir_musica.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/login.php</file>
-            <file>file:/C:/xampp/htdocs/ManualM/ver_temas.php</file>
         </group>
     </open-files>
 </project-private>
