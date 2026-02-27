@@ -1,17 +1,21 @@
 <?php
-$host = 'localhost';
-$db   = 'ManualM';   
-$user = 'root';
-$pass = '';         // no voy a usar contraseña porque el XAMPP no tiene.
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
+$host = "localhost";
+$user = "root";
+$pass = "Admin$1234"; 
+$db   = "ManualM";
 
 try {
-    $pdo = new PDO($dsn, $user, $pass);
+    // Creamos la conexión tipo PDO para que coincida con tus otros archivos
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    
+    // Configuramos para que PDO nos avise de CUALQUIER error
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Conexión exitosa";  // Solo para pruebas
+    
+    // También creamos $conn por si algún otro archivo viejo todavía usa mysqli
+    $conn = mysqli_connect($host, $user, $pass, $db);
+
 } catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+    die("Error en el Olimpo (Conexión): " . $e->getMessage());
 }
 ?>
+
