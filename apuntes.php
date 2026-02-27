@@ -19,7 +19,7 @@ $apuntes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Apuntes del Olimpo | Manual M</title>
+    <title>Apuntes | Manual M</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-olympus { background-image: url('image/olympus_tholos.png'); background-size: cover; background-attachment: fixed; }
