@@ -111,3 +111,5 @@ INSERT INTO musica (titulo, archivo, usuario_id) VALUES ('Mi Primera Canción', 
 INSERT INTO musica (titulo, archivo, usuario_id) VALUES ('009_Sound_System_Trinity', 'cancion_2.mp3', 1);
 INSERT INTO musica (titulo, archivo, usuario_id) VALUES ('009_Sound System_Born_To_Be_Wasted', 'cancion_3.mp3', 1);
 INSERT INTO musica (titulo, archivo, usuario_id) VALUES ('009_Sound_System_With_A_Spirit', 'cancion_4.mp3', 1);
+
+DROP DATABASE ManualM;
