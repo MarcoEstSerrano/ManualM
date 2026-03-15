@@ -65,50 +65,66 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                        <a href="ver_temas.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">📜</div>
+                        <a href="ver_temas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                📜
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Manual</h3>
                             <p class="text-sm text-gray-400 mt-2">Consulta y crea temas del saber.</p>
                         </a>
 
-                        <a href="calendario.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">📅</div>
+                        <a href="calendario.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                📅
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Calendario</h3>
                             <p class="text-sm text-gray-400 mt-2">Organiza tus fechas importantes.</p>
                         </a>
 
-                        <a href="calculadora.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">🔢</div>
+                        <a href="calculadora.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                🔢
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Calculadora</h3>
                             <p class="text-sm text-gray-400 mt-2">Herramientas matemáticas.</p>
                         </a>
 
-                        <a href="finanzas.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">💰</div>
+                        <a href="finanzas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                💰
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Finanzas</h3>
                             <p class="text-sm text-gray-400 mt-2">Control de ingresos y gastos.</p>
                         </a>
 
-                        <a href="tareas.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">✅</div>
+                        <a href="tareas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                ✅
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Tareas</h3>
                             <p class="text-sm text-gray-400 mt-2">Lista de pendientes por hacer.</p>
                         </a>
 
-                        <a href="apuntes.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">✍️</div>
+                        <a href="apuntes.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                ✍️
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Apuntes</h3>
                             <p class="text-sm text-gray-400 mt-2">Notas rápidas y recordatorios.</p>
                         </a>
 
-                        <a href="multimedia.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">🎬</div>
+                        <a href="multimedia.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                🎬
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">Multimedia</h3>
                             <p class="text-sm text-gray-400 mt-2">Gestión de fotos y videos.</p>
                         </a>
 
-                        <a href="musica.php" class="glass-card group p-6 rounded-2xl text-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300">📱</div>
+                        <a href="musica.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
+                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
+                                📱
+                            </div>
                             <h3 class="text-xl font-bold text-[#f1c40f]">iPod</h3>
                             <p class="text-sm text-gray-400 mt-2">Tu biblioteca musical personal.</p>
                         </a>
