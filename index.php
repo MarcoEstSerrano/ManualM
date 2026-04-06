@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEC ISHIMURA | RIG Dashboard</title>
+    <title>Sistema de Operaciones | Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -29,18 +29,17 @@ if (!isset($_SESSION['usuario_id'])) {
         }
 
         body {
-            /* Fondo de espacio profundo / Ishimura */
             background-color: #020205;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://w0.peakpx.com/wallpaper/599/440/HD-wallpaper-dead-space-dead-space-remake-usg-ishimura.jpg');
+            /* Nueva imagen de fondo: USG Ishimura en órbita */
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://i.redd.it/uur0s135yxc71.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        /* Efecto de cristal holográfico */
         .hologram-card {
             background: rgba(0, 242, 255, 0.03);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 242, 255, 0.2);
             position: relative;
             overflow: hidden;
@@ -73,14 +72,12 @@ if (!isset($_SESSION['usuario_id'])) {
             text-shadow: 0 0 8px rgba(0, 242, 255, 0.8);
         }
 
-        /* Estilo industrial para el header */
         .cec-header {
             background: rgba(0, 0, 0, 0.9);
             border-bottom: 3px solid var(--ishimura-cyan);
             clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 5% 100%, 0 80%);
         }
 
-        /* Scrollbar estilo Dead Space */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: var(--ishimura-cyan); }
@@ -88,19 +85,19 @@ if (!isset($_SESSION['usuario_id'])) {
 </head>
 <body class="min-h-screen text-gray-200 font-mono">
 
-    <div class="min-h-screen bg-black/30 flex flex-col">
+    <div class="min-h-screen bg-black/40 flex flex-col">
 
         <header class="p-8 cec-header text-center mb-6">
             <div class="max-w-4xl mx-auto flex justify-between items-center">
                 <div class="text-left">
-                    <p class="text-[10px] tracking-[0.3em] text-cyan-500">CONCORDANCE EXTRACTION CORP.</p>
+                    <p class="text-xs tracking-[0.3em] text-cyan-500 uppercase">Makyleaf Corp.</p>
                     <h2 class="text-2xl font-bold text-hologram uppercase italic">
-                        <?php echo "SISTEMA RIG: " . htmlspecialchars($_SESSION['nombre'] ?? 'INGENIERO'); ?> 
+                        <?php echo "INGENIERO: " . htmlspecialchars($_SESSION['nombre'] ?? 'MARCO ESTEBAN'); ?> 
                     </h2>
                 </div>
                 <div class="text-right">
-                    <p class="text-[10px] text-cyan-800">ESTADO DE RED: <span class="animate-pulse text-green-500">CONECTADO</span></p>
-                    <p class="text-[10px] text-cyan-800">UBICACIÓN: ÓRBITA AEGIS VII</p>
+                    <p class="text-xs text-cyan-800">ESTADO DE RED: <span class="animate-pulse text-green-500 font-bold">CONECTADO</span></p>
+                    <p class="text-xs text-cyan-800 uppercase">UBICACIÓN: Guayabo de Mora, CR</p>
                 </div>
             </div>
         </header>
@@ -108,8 +105,8 @@ if (!isset($_SESSION['usuario_id'])) {
         <main class="flex-1 p-8">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <h1 class="text-5xl font-black tracking-tighter text-white">OPERACIONES <span class="text-hologram">ISHIMURA</span></h1>
-                    <p class="text-cyan-600 text-xs mt-2 uppercase tracking-widest">Seleccione módulo de ingeniería para proceder</p>
+                    <h1 class="text-5xl font-black tracking-tighter text-white uppercase">SISTEMA DE <span class="text-hologram">OPERACIONES</span></h1>
+                    <p class="text-cyan-600 text-sm mt-2 uppercase tracking-widest">Protocolos de Ingeniería Nivel 3</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -117,37 +114,37 @@ if (!isset($_SESSION['usuario_id'])) {
                     <a href="ver_temas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
                         <div class="text-cyan-400 text-4xl mb-4 group-hover:rotate-12 transition-all">📂</div>
                         <h3 class="text-lg font-bold text-hologram italic">BASE DE DATOS</h3>
-                        <p class="text-[10px] text-cyan-700 mt-2">Registros y esquemas técnicos de la nave.</p>
+                        <p class="text-sm text-cyan-700 mt-2">Registros y esquemas técnicos de la nave.</p>
                     </a>
 
                     <a href="calendario.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
                         <div class="text-cyan-400 text-4xl mb-4 group-hover:scale-110 transition-all">🕒</div>
                         <h3 class="text-lg font-bold text-hologram italic">CRONOGRAMA</h3>
-                        <p class="text-[10px] text-cyan-700 mt-2">Ciclos de rotación y eventos estelares.</p>
+                        <p class="text-sm text-cyan-700 mt-2">Ciclos de rotación y eventos estelares.</p>
                     </a>
 
                     <a href="finanzas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center" style="border-color: rgba(255, 128, 0, 0.3);">
                         <div class="text-orange-500 text-4xl mb-4">💳</div>
-                        <h3 class="text-lg font-bold text-orange-500 italic">CRÉDITOS CEC</h3>
-                        <p class="text-[10px] text-orange-800 mt-2">Balance de suministros y transacciones.</p>
+                        <h3 class="text-lg font-bold text-orange-500 italic uppercase">Créditos</h3>
+                        <p class="text-sm text-orange-800 mt-2">Balance de suministros y transacciones.</p>
                     </a>
 
                     <a href="tareas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
                         <div class="text-cyan-400 text-4xl mb-4">🛠️</div>
                         <h3 class="text-lg font-bold text-hologram italic">MANTENIMIENTO</h3>
-                        <p class="text-[10px] text-cyan-700 mt-2">Protocolos de reparación pendientes.</p>
+                        <p class="text-sm text-cyan-700 mt-2">Protocolos de reparación pendientes.</p>
                     </a>
 
                     <a href="musica.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
                         <div class="text-cyan-400 text-4xl mb-4">🔊</div>
-                        <h3 class="text-lg font-bold text-hologram italic">REGISTROS AUDIO</h3>
-                        <p class="text-[10px] text-cyan-700 mt-2">Biblioteca de transmisiones recuperadas.</p>
+                        <h3 class="text-lg font-bold text-hologram italic">AUDIO-LOGS</h3>
+                        <p class="text-sm text-cyan-700 mt-2">Biblioteca de transmisiones recuperadas.</p>
                     </a>
 
                     <a href="multimedia.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
                         <div class="text-cyan-400 text-4xl mb-4">📷</div>
-                        <h3 class="text-lg font-bold text-hologram italic">SISTEMA VISUAL</h3>
-                        <p class="text-[10px] text-cyan-700 mt-2">Archivos de video y cámaras de seguridad.</p>
+                        <h3 class="text-lg font-bold text-hologram italic">VIDEO-LOGS</h3>
+                        <p class="text-sm text-cyan-700 mt-2">Archivos de video y cámaras de seguridad.</p>
                     </a>
 
                 </div>
@@ -160,8 +157,8 @@ if (!isset($_SESSION['usuario_id'])) {
             </div>
         </main>
 
-        <footer class="p-6 bg-black text-center text-[10px] text-cyan-900 border-t border-cyan-900/30">
-            <p>TERMINAL ISHIMURA-OS v3.0 | PROPIEDAD DE CEC | © 2508 - "Make Us Whole"</p>
+        <footer class="p-6 bg-black text-center text-xs text-cyan-900 border-t border-cyan-900/30">
+            <p>ING. MARCO SERRANO | UNIDAD DE RESPUESTA TÉCNICA | © 2026 - MAKE US WHOLE</p>
         </footer>
     </div>
 
