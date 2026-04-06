@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 
-// Seguridad: evita que entren sin login
 header("Cache-Control: no-cache, no-store, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
@@ -18,131 +17,153 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cámara del Tholos | Dashboard</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            .bg-olympus {
-                background-image: url('https://images6.alphacoders.com/795/795828.jpg');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-            }
-            .glass-card {
-                background: rgba(0, 0, 0, 0.7);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(241, 196, 15, 0.3);
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-            .glass-card:hover {
-                transform: translateY(-10px);
-                border-color: #f1c40f;
-                box-shadow: 0 10px 30px -5px rgba(241, 196, 15, 0.4);
-            }
-        </style>
-    </head>
-    <body class="bg-olympus min-h-screen text-white font-sans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEC ISHIMURA | RIG Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --ishimura-cyan: #00f2ff;
+            --ishimura-orange: #ff8000;
+        }
 
-        <div class="min-h-screen bg-black/50 flex flex-col">
+        body {
+            /* Fondo de espacio profundo / Ishimura */
+            background-color: #020205;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://w0.peakpx.com/wallpaper/599/440/HD-wallpaper-dead-space-dead-space-remake-usg-ishimura.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-            <header class="p-6 bg-black/80 border-b-2 border-[#f1c40f] text-center">
-                <h2 class="text-2xl font-bold text-[#f1c40f] tracking-widest uppercase">
-                    <?php
-                    $nombre_usuario = $_SESSION['nombre'] ?? 'Guerrero';
-                    echo "Bienvenido, " . htmlspecialchars($nombre_usuario);
-                    ?> 
-                </h2>
-            </header>
+        /* Efecto de cristal holográfico */
+        .hologram-card {
+            background: rgba(0, 242, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
 
-            <main class="flex-1 p-8">
-                <div class="max-w-6xl mx-auto">
-                    <div class="text-center mb-10">
-                        <h1 class="text-4xl font-black mb-2">CENTRO DE <span class="text-[#f1c40f]">CONTROL</span></h1>
-                        <p class="text-gray-300">Selecciona una herramienta para comenzar</p>
-                    </div>
+        .hologram-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--ishimura-cyan);
+            opacity: 0.3;
+            animation: scanline 4s linear infinite;
+        }
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        @keyframes scanline {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
 
-                        <a href="ver_temas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                📜
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Manual</h3>
-                            <p class="text-sm text-gray-400 mt-2">Consulta y crea temas del saber.</p>
-                        </a>
+        .hologram-card:hover {
+            background: rgba(0, 242, 255, 0.1);
+            border-color: var(--ishimura-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            transform: scale(1.02);
+        }
 
-                        <a href="calendario.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                📅
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Calendario</h3>
-                            <p class="text-sm text-gray-400 mt-2">Organiza tus fechas importantes.</p>
-                        </a>
+        .text-hologram {
+            color: var(--ishimura-cyan);
+            text-shadow: 0 0 8px rgba(0, 242, 255, 0.8);
+        }
 
-                        <a href="calculadora.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                🔢
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Calculadora</h3>
-                            <p class="text-sm text-gray-400 mt-2">Herramientas matemáticas.</p>
-                        </a>
+        /* Estilo industrial para el header */
+        .cec-header {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 3px solid var(--ishimura-cyan);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 5% 100%, 0 80%);
+        }
 
-                        <a href="finanzas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                💰
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Finanzas</h3>
-                            <p class="text-sm text-gray-400 mt-2">Control de ingresos y gastos.</p>
-                        </a>
+        /* Scrollbar estilo Dead Space */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: var(--ishimura-cyan); }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200 font-mono">
 
-                        <a href="tareas.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                ✅
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Tareas</h3>
-                            <p class="text-sm text-gray-400 mt-2">Lista de pendientes por hacer.</p>
-                        </a>
+    <div class="min-h-screen bg-black/30 flex flex-col">
 
-                        <a href="apuntes.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                ✍️
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Apuntes</h3>
-                            <p class="text-sm text-gray-400 mt-2">Notas rápidas y recordatorios.</p>
-                        </a>
-
-                        <a href="multimedia.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                🎬
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">Multimedia</h3>
-                            <p class="text-sm text-gray-400 mt-2">Gestión de fotos y videos.</p>
-                        </a>
-
-                        <a href="musica.php" class="glass-card group p-6 rounded-2xl text-center flex flex-col items-center">
-                            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 h-12 w-12 flex items-center justify-center">
-                                📱
-                            </div>
-                            <h3 class="text-xl font-bold text-[#f1c40f]">iPod</h3>
-                            <p class="text-sm text-gray-400 mt-2">Tu biblioteca musical personal.</p>
-                        </a>
-
-                    </div>
-
-                    <div class="mt-12 text-center">
-                        <a href="logout.php" class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-colors shadow-lg">
-                            Cerrar Sesión
-                        </a>
-                    </div>
+        <header class="p-8 cec-header text-center mb-6">
+            <div class="max-w-4xl mx-auto flex justify-between items-center">
+                <div class="text-left">
+                    <p class="text-[10px] tracking-[0.3em] text-cyan-500">CONCORDANCE EXTRACTION CORP.</p>
+                    <h2 class="text-2xl font-bold text-hologram uppercase italic">
+                        <?php echo "SISTEMA RIG: " . htmlspecialchars($_SESSION['nombre'] ?? 'INGENIERO'); ?> 
+                    </h2>
                 </div>
-            </main>
+                <div class="text-right">
+                    <p class="text-[10px] text-cyan-800">ESTADO DE RED: <span class="animate-pulse text-green-500">CONECTADO</span></p>
+                    <p class="text-[10px] text-cyan-800">UBICACIÓN: ÓRBITA AEGIS VII</p>
+                </div>
+            </div>
+        </header>
 
-            <footer class="p-4 bg-black/90 text-center text-xs text-gray-500 border-t border-[#f1c40f]/30">
-                <p>© Manual de Marco 2026 - El conocimiento es poder</p>
-            </footer>
-        </div>
+        <main class="flex-1 p-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-black tracking-tighter text-white">OPERACIONES <span class="text-hologram">ISHIMURA</span></h1>
+                    <p class="text-cyan-600 text-xs mt-2 uppercase tracking-widest">Seleccione módulo de ingeniería para proceder</p>
+                </div>
 
-    </body>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <a href="ver_temas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
+                        <div class="text-cyan-400 text-4xl mb-4 group-hover:rotate-12 transition-all">📂</div>
+                        <h3 class="text-lg font-bold text-hologram italic">BASE DE DATOS</h3>
+                        <p class="text-[10px] text-cyan-700 mt-2">Registros y esquemas técnicos de la nave.</p>
+                    </a>
+
+                    <a href="calendario.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
+                        <div class="text-cyan-400 text-4xl mb-4 group-hover:scale-110 transition-all">🕒</div>
+                        <h3 class="text-lg font-bold text-hologram italic">CRONOGRAMA</h3>
+                        <p class="text-[10px] text-cyan-700 mt-2">Ciclos de rotación y eventos estelares.</p>
+                    </a>
+
+                    <a href="finanzas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center" style="border-color: rgba(255, 128, 0, 0.3);">
+                        <div class="text-orange-500 text-4xl mb-4">💳</div>
+                        <h3 class="text-lg font-bold text-orange-500 italic">CRÉDITOS CEC</h3>
+                        <p class="text-[10px] text-orange-800 mt-2">Balance de suministros y transacciones.</p>
+                    </a>
+
+                    <a href="tareas.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
+                        <div class="text-cyan-400 text-4xl mb-4">🛠️</div>
+                        <h3 class="text-lg font-bold text-hologram italic">MANTENIMIENTO</h3>
+                        <p class="text-[10px] text-cyan-700 mt-2">Protocolos de reparación pendientes.</p>
+                    </a>
+
+                    <a href="musica.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
+                        <div class="text-cyan-400 text-4xl mb-4">🔊</div>
+                        <h3 class="text-lg font-bold text-hologram italic">REGISTROS AUDIO</h3>
+                        <p class="text-[10px] text-cyan-700 mt-2">Biblioteca de transmisiones recuperadas.</p>
+                    </a>
+
+                    <a href="multimedia.php" class="hologram-card group p-6 rounded-sm text-center flex flex-col items-center">
+                        <div class="text-cyan-400 text-4xl mb-4">📷</div>
+                        <h3 class="text-lg font-bold text-hologram italic">SISTEMA VISUAL</h3>
+                        <p class="text-[10px] text-cyan-700 mt-2">Archivos de video y cámaras de seguridad.</p>
+                    </a>
+
+                </div>
+
+                <div class="mt-16 text-center">
+                    <a href="logout.php" class="inline-block px-10 py-2 border-2 border-red-900 bg-red-950/20 hover:bg-red-600 text-red-500 hover:text-white font-bold uppercase tracking-widest transition-all italic">
+                        Desconectar Terminal
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="p-6 bg-black text-center text-[10px] text-cyan-900 border-t border-cyan-900/30">
+            <p>TERMINAL ISHIMURA-OS v3.0 | PROPIEDAD DE CEC | © 2508 - "Make Us Whole"</p>
+        </footer>
+    </div>
+
+</body>
 </html>
